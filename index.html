@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>selamat ulang tahun sayang</title>
+    <title>Keysia Cantik</title>
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4); /* Gradasi pink lembut */
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -21,15 +21,13 @@
             animation: fadeIn 2s ease-in-out infinite alternate;
         }
 
-        /* Layout Foto */
         .photo-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 kolom per baris */
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-top: 20px;
         }
 
-        /* Frame foto lebih besar */
         .photo-container img {
             width: 150px;
             height: 150px;
@@ -38,18 +36,15 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        /* Efek hover */
         .photo-container img:hover {
             transform: scale(1.1);
         }
 
-        /* Animasi teks */
         @keyframes fadeIn {
             0% { opacity: 0.5; transform: scale(0.9); }
             100% { opacity: 1; transform: scale(1); }
         }
 
-        /* Animasi hati bergerak */
         .heart {
             position: absolute;
             color: red;
@@ -68,12 +63,12 @@
     <h2>I love you</h2>
 
     <!-- Musik romantis -->
-    <audio id="background-music" autoplay loop>
+    <audio id="background-music" loop>
         <source src="musik.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Tata letak foto (hanya 5 foto) -->
+    <!-- Tata letak foto -->
     <div class="photo-container">
         <img src="gambar.jpg" alt="Keysia">
         <img src="gambar2.jpg" alt="Keysia">
@@ -102,10 +97,12 @@
 
         setInterval(createHeart, 500);
 
-        // Play musik setelah user klik layar
+        // Musik hanya akan mulai setelah user klik halaman
         document.addEventListener("click", function() {
             const music = document.getElementById("background-music");
-            music.play();
+            if (music.paused) {
+                music.play();
+            }
         });
     </script>
 </body>

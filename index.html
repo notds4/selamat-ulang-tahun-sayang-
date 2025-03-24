@@ -14,6 +14,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
         h1, h2 {
             color: white;
@@ -49,7 +50,7 @@
             position: absolute;
             color: red;
             font-size: 20px;
-            animation: floatUp 3s linear infinite;
+            animation: floatUp 5s linear infinite;
         }
 
         @keyframes floatUp {
@@ -87,15 +88,17 @@
             heart.style.left = Math.random() * 100 + "vw";
             heart.style.top = "100vh";
             heart.style.position = "fixed";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            heart.style.animationDuration = Math.random() * 5 + 3 + "s";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
             document.body.appendChild(heart);
 
             setTimeout(() => {
                 heart.remove();
-            }, 3000);
+            }, 5000);
         }
 
-        setInterval(createHeart, 500);
+        // Memperbanyak jumlah love
+        setInterval(createHeart, 200);
 
         // Musik hanya akan mulai setelah user klik halaman
         document.addEventListener("click", function() {

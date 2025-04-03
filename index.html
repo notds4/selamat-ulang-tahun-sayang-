@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keysia Cantik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         body {
             text-align: center;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Great Vibes', cursive;
+            background: #FFC0CB; /* Pink polos */
             height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            position: relative;
         }
+
         h1, h2 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            color: #FFD700; /* Warna emas */
+            text-shadow: 2px 2px 0px white, 4px 4px 6px rgba(0, 0, 0, 0.3);
+            font-size: 50px;
+            margin: 10px;
             animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0.5; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
         .photo-container {
@@ -35,15 +45,11 @@
             border-radius: 10px;
             object-fit: cover;
             transition: transform 0.3s ease-in-out;
+            border: 3px solid white;
         }
 
         .photo-container img:hover {
             transform: scale(1.1);
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0.5; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
         }
 
         .heart {
@@ -60,14 +66,8 @@
     </style>
 </head>
 <body>
-    <h1>Good morning sayang</h1>
+    <h1>Good morning </h1>
     <h2>I love you</h2>
-
-    <!-- Musik romantis -->
-    <audio id="background-music" loop>
-        <source src="musik.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
 
     <!-- Tata letak foto -->
     <div class="photo-container">
@@ -79,7 +79,7 @@
         <img src="gambar6.jpg" alt="Keysia">
     </div>
 
-    <!-- Hati bergerak -->
+    <!-- Hati Bergerak -->
     <script>
         function createHeart() {
             const heart = document.createElement("div");
@@ -99,14 +99,6 @@
 
         // Memperbanyak jumlah love
         setInterval(createHeart, 200);
-
-        // Musik hanya akan mulai setelah user klik halaman
-        document.addEventListener("click", function() {
-            const music = document.getElementById("background-music");
-            if (music.paused) {
-                music.play();
-            }
-        });
     </script>
 </body>
 </html>
